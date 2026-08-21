@@ -10,6 +10,7 @@ html::-webkit-scrollbar {
 }
 html {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 
@@ -19,7 +20,6 @@ FUENTES Y ESTILOS DE TEXTO
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
 
-
 :root {
   /* FUENTES DE FONTSHARE */
   --font-title: "DM Serif Display", serif;
@@ -27,11 +27,11 @@ FUENTES Y ESTILOS DE TEXTO
   --font-body: 'Poppins', sans-serif;
   --font-special: 'Switzer', sans-serif;
 
-  /* TAMAÑOS */
-  --size-title: clamp(2.2rem, 5vw, 3.8rem);
-  --size-subtitle: clamp(1.2rem, 2.5vw, 1.8rem);
-  --size-body: clamp(0.75rem, 1vw, 1rem);
-  --size-special: clamp(0.85rem, 1vw, 1rem);
+  /* TAMAÑOS (Ajustados a una escala más compacta) */
+  --size-title: clamp(2rem, 4.5vw, 3.2rem);
+  --size-subtitle: clamp(1rem, 2vw, 1.4rem);
+  --size-body: clamp(0.7rem, 0.9vw, 0.9rem);
+  --size-special: clamp(0.75rem, 0.9vw, 0.95rem);
 
   /* COLORES DE TEXTO */
   --text-primary: #efefef;
@@ -45,6 +45,9 @@ body {
   font-size: var(--size-body);
   color: var(--text-primary);
   line-height: 1.6;
+  background-color: #000000;
+  display: flex;
+  min-height: 100vh;
 }
 
 /* 1. TÍTULOS (DM Serif) */
@@ -68,7 +71,7 @@ h3, h4, .text-subtitle {
 }
 
 /* 3. CUERPO DE TEXTO (POPPINS) */
-p, span .text-body {
+p, span, .text-body {
   font-family: var(--font-body);
   font-size: var(--size-body);
   font-weight: 500;
@@ -86,15 +89,6 @@ p, span .text-body {
   color: var(--text-primary);
 }
 
-body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: system-ui, -apple-system, sans-serif;
-  display: flex;
-  min-height: 100vh;
-}
-
-
 
 /*
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -108,7 +102,7 @@ BOTONES/UI
   padding: 0;
   margin-top: 1rem;
   font-family: var(--font-body, inherit);
-  font-size: 0.95rem;
+  font-size: clamp(0.75rem, 0.85rem, 0.9rem);
   font-weight: 500;
   color: var(--text-primary, #ffffff);
   cursor: pointer;
@@ -160,16 +154,80 @@ MENU DE NAVEGACIÓN
   z-index: 100;
 }
 
+.sidebar-bottom {
+  margin-top: auto;
+  width: 100%;
+}
+
+.lang-btn {
+  width: auto;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0.8rem 0;
+  font-family: var(--font-subtitle);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: #888888;
+}
+
 .nav-menu {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+.profile-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-top: 13px;
+  margin-bottom: 110px;
+  transition: justify-content 0.3s ease;
+}
+
+.profile-picture {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: solid #be350c 2px;
+  object-fit: cover;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.profile-picture:hover {
+  border: solid #be350c 3px;
+}
+
+.profile-container.is-scrolled {
+  justify-content: flex-start;
+}
+
+.profile-container.is-scrolled .profile-picture {
+  width: 70px;
+  height: 70px;
+}
+
+.sidebar-divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 0 0.7rem 0;
+  width: 100%;
+}
+
 .nav-item {
   color: #888888;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
 }
 
@@ -182,10 +240,9 @@ MENU DE NAVEGACIÓN
 
 /*
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-CABECERA / INICIO
+CABECERA / INICIO (INTACTO)
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
-
 
 .main-content {
   margin-left: 250px;
@@ -214,7 +271,6 @@ CABECERA / INICIO
   z-index: 5;
 }
 
-
 .hero-title {
   font-family: var(--font-title);
   font-size: clamp(2.5rem, 7vw, 5.6rem);
@@ -235,7 +291,8 @@ CABECERA / INICIO
 
 .hero-subtitle-text {
   font-family: var(--font-subtitle);
-  font-size: clamp(0.50rem, 1.5vw, 1rem);  color: var(--text-primary);
+  font-size: clamp(0.50rem, 1.5vw, 1rem);
+  color: var(--text-primary);
   white-space: nowrap;
   display: block;
 }
@@ -306,7 +363,7 @@ CABECERA / INICIO
 .tag:hover {
   background-color: #262626;
   color: #ffffff;
-  border-color: var(--text-accent, #be350c); /* Tu tono de acento */
+  border-color: var(--text-accent, #be350c);
   transform: translateY(-1px);
 }
 
@@ -317,20 +374,13 @@ CABECERA / INICIO
   padding: 3rem 0;
   overflow: hidden;
 }
-.marquee-swiper .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
-
-.marquee-swiper .swiper-slide {
-  width: auto !important;
-}
 
 .marquee-swiper .swiper-wrapper {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: center;
-  transition-timing-function: linear !important; /* Quita tirones de aceleración */
+  transition-timing-function: linear !important;
 }
 
 .marquee-swiper .swiper-slide {
@@ -352,30 +402,163 @@ EDUCACIÓN / FORMACIÓN
   background-color: #000000;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
-  z-index: 10; /* Se dibuja por encima del flujo del hero */
-  overflow: visible
+  z-index: 10;
+  overflow: visible;
+}
+
+.education-item {
+  margin-top: 30px;
+}
+
+.education-item h3 {
+  font-family: var(--font-special);
+  font-size: 0.85rem;
+  color: #d43c0d;
+}
+
+.simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  padding-left: 1.5rem;
+}
+
+.simple-list li {
+  position: relative;
+  padding-left: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.simple-list a {
+  color: #ffffff;
+  font-family: var(--font-special);
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+  text-decoration: none;
+}
+
+.simple-list a:hover {
+  text-decoration: underline;
+}
+
+.icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.icon-label img {
+  display: block;
+  height: 100%;
+}
+
+.icon-label span {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+}
+
+/*
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+EXPERIENCIA
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+*/
+
+.experience-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: transparent;
+  margin-top: 2rem;
+}
+
+.experience-card h3{
+    font-size: 1.5rem;
+}
+
+.card-main {
+  display: flex;
+  gap: 1.2rem;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+    max-width: 50%;
+}
+
+.card-tags {
+    max-width: 65%;
+    margin-bottom: 40px;
+}
+
+.year-box {
+  width: 100px;
+  min-height: 120px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.6rem 0.5rem;
+}
+
+.year-box span {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.2rem 0;
+}
+
+.card-company {
+  color: #d43c0d;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.card-description {
+  color: #ffffff;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .sticky-card {
   position: sticky;
   top: 4rem;
   background-color: #be360c8d;
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .sticky-card h1 {
-    font-size: clamp(1.6rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 1.6vw, 1.6rem);
 }
 
 .sticky-card img {
-    height: 25px;
+  height: 30px;
 }
 
 .sticky-card img:hover {
-    transform: scale(1.15);
-    filter: brightness(0.7);
+  transform: scale(1.15);
+  filter: brightness(0.7);
 }
-
 
 .split-container {
   width: 100%;
@@ -387,6 +570,134 @@ EDUCACIÓN / FORMACIÓN
 }
 
 
+/*
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+SECCIÓN PROYECTOS (FONDO NARANJA)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+*/
+
+.projects-section {
+  width: 100%;
+  padding: 4rem 0 4rem 5%;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(190, 53, 12, 0.85), rgba(190, 53, 12, 0.85)), url("images/code.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.projects-title {
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 4.2vw, 4.2rem);
+  margin-bottom: 3rem;
+  padding-right: 5%; /* Equilibra el centrado */
+}
+
+.projects-wrapper {
+  height: 330vh;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(190, 54, 12, 0.55), rgba(190, 54, 12, 0.55)), 
+    url("images/code.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.projects-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 5%;
+}
+
+.projects-title {
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--font-title);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  margin-bottom: 2rem;
+  padding-right: 5%;
+}
+
+.projects-carousel {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.project-card {
+  flex: 0 0 calc(40% - 1rem);
+  min-width: 280px;
+  background-color: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-img-wrapper {
+  width: 100%;
+  height: 160px;
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-subtitle {
+  font-family: var(--font-subtitle);
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.project-description {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #cccccc;
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.project-btn {
+  margin-top: 20px;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
 @media (min-width: 1000px) {
   .split-container {
     display: grid;
@@ -397,7 +708,7 @@ EDUCACIÓN / FORMACIÓN
 
   .split-right {
     height: 100%;
-    display: block; /* Solo se muestra aquí */
+    display: block;
   }
 
   .sticky-card {
@@ -408,7 +719,6 @@ EDUCACIÓN / FORMACIÓN
 }
 
 
-/* REGLAS PARA PANTALLAS PEQUEÑAS (Media queries de apoyo) */
 @media (max-width: 1000px) {
   .hero-title-wrapper {
     top: 180px;

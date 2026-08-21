@@ -1,217 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Fernández | Portfolio Web</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sergio Fernández | Portfolio Web</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=poppins@500&f[]=montserrat@400&f[]=switzer@800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-</head>
-<body>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://api.fontshare.com/v2/css?f[]=poppins@500&f[]=montserrat@400&f[]=switzer@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    </head>
 
-  <aside class="sidebar">
-    <div class="logo">
-      <h2>MiCV<span>.</span></h2>
-    </div>
-    <nav class="nav-menu">
-      <a href="#hero" class="nav-item active">Inicio</a>
-      <a href="#sobre-mi" class="nav-item">Sobre mí</a>
-      <a href="#proyectos" class="nav-item">Proyectos</a>
-      <a href="#contacto" class="nav-item">Contacto</a>
-    </nav>
-  </aside>
+    
+    <body>
 
-    <main class="main-content">
+    <aside class="sidebar">
+        <div class="profile-container">
+            <a href="#">
+                <img src="images/profile.jpg" class="profile-picture">
+            </a>
+        </div>
 
-        <header id="hero" class="hero-container">
-            <img src="images/Deckstop.png" alt="Fondo Hero" class="hero-img">
+        <nav class="nav-menu">
+        <a href="#" class="nav-item">Sobre mí</a>
+        <a href="#formacion" class="nav-item">Formación</a>
+        <a href="#experiencia" class="nav-item">Experiencia</a>
+        <a href="#proyectos" class="nav-item">Proyectos</a>
+        <a href="#contacto" class="nav-item">Contacto</a>
+        </nav>
 
-            <div class="hero-title-wrapper">
-                <h1 class="hero-title">Sergio Fernández</h1>
-                
-                <div class="hero-subtitle-box">
-                    <span class="hero-subtitle-text">JUNIOR SOFTWARE DEVELOPER</span>
+        <div class="sidebar-bottom">
+            <hr class="sidebar-divider">
+            <button id="lang-toggle" class="lang-btn" data-lang="es">EN</button>
+        </div>
+        
+        
+
+    </aside>
+
+        <main class="main-content">
+
+            <header id="hero" class="hero-container">
+                <img src="images/Deckstop.png" alt="Fondo Hero" class="hero-img">
+
+                <div class="hero-title-wrapper">
+                    <h1 class="hero-title">Sergio Fernández</h1>
+                    
+                    <div class="hero-subtitle-box">
+                        <span class="hero-subtitle-text">JUNIOR SOFTWARE DEVELOPER</span>
+                    </div>
+
+                    <div class="hero-body-overlap">
+                        <p>
+                        A punto de graduarme en Ingeniería Informática, me defino como un desarrollador con perfil Full Stack y un especial gusto por el diseño. Me considero una persona alegre, activa y con ganas de seguir aprendiendo, siempre he sido organizado, responsable y crítico con mi trabajo</p>
+                        </p>
+                    </div>
+
+                    <div class="swiper marquee-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Grupo 1 -->
+                            <div class="swiper-slide tag">HTML5</div>
+                            <div class="swiper-slide tag">CSS3</div>
+                            <div class="swiper-slide tag">JavaScript</div>
+                            <div class="swiper-slide tag">React</div>
+                            <div class="swiper-slide tag">Node.js</div>
+                            <div class="swiper-slide tag">Git</div>
+                            <div class="swiper-slide tag">Python</div>
+                            <div class="swiper-slide tag">SQL</div>
+                            <div class="swiper-slide tag">Full Stack</div>
+                            <div class="swiper-slide tag">UI/UX</div>
+
+                            <!-- Grupo 2 -->
+                            <div class="swiper-slide tag">HTML5</div>
+                            <div class="swiper-slide tag">CSS3</div>
+                            <div class="swiper-slide tag">JavaScript</div>
+                            <div class="swiper-slide tag">React</div>
+                            <div class="swiper-slide tag">Node.js</div>
+                            <div class="swiper-slide tag">Git</div>
+                            <div class="swiper-slide tag">Python</div>
+                            <div class="swiper-slide tag">SQL</div>
+                            <div class="swiper-slide tag">Full Stack</div>
+                            <div class="swiper-slide tag">UI/UX</div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="hero-body-overlap">
-                    <p>
-                    A punto de graduarme en Ingeniería Informática, me defino como un desarrollador con perfil Full Stack y un especial gusto por el diseño. Me considero una persona alegre, activa y con ganas de seguir aprendiendo, siempre he sido organizado, responsable y crítico con mi trabajo</p>
-                    </p>
-                </div>
+                <!-- JS de SwiperJS -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-                <div class="swiper marquee-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- Grupo 1 -->
-                        <div class="swiper-slide tag">HTML5</div>
-                        <div class="swiper-slide tag">CSS3</div>
-                        <div class="swiper-slide tag">JavaScript</div>
-                        <div class="swiper-slide tag">React</div>
-                        <div class="swiper-slide tag">Node.js</div>
-                        <div class="swiper-slide tag">Git</div>
-                        <div class="swiper-slide tag">Python</div>
-                        <div class="swiper-slide tag">SQL</div>
-                        <div class="swiper-slide tag">Full Stack</div>
-                        <div class="swiper-slide tag">UI/UX</div>
+            <script>
+            const swiper = new Swiper('.marquee-swiper', {
+                loop: true,
+                loopedSlides: 10,
+                slidesPerView: 'auto',
+                spaceBetween: 12,
+                speed: 5000,
+                autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+                }
+            });
+            </script>
 
-                        <!-- Grupo 2 -->
-                        <div class="swiper-slide tag">HTML5</div>
-                        <div class="swiper-slide tag">CSS3</div>
-                        <div class="swiper-slide tag">JavaScript</div>
-                        <div class="swiper-slide tag">React</div>
-                        <div class="swiper-slide tag">Node.js</div>
-                        <div class="swiper-slide tag">Git</div>
-                        <div class="swiper-slide tag">Python</div>
-                        <div class="swiper-slide tag">SQL</div>
-                        <div class="swiper-slide tag">Full Stack</div>
-                        <div class="swiper-slide tag">UI/UX</div>
+            </header>
+
+            <section id="educacion" class="education-section">
+                <div class="split-container">
+                    <div class="split-left">
+                        <div class="education-header">
+                            <h2 id="formacion" class="education-title">Formación</h2>
+
+                            <div class="education-item">
+                                <div class="icon-label">
+                                    <img src="images/icons/school.png" width="30" alt="colegio">
+                                    <span>Obligatoria</span>
+                                </div>
+                                <h4>Colegio Claret de Madrid</h4>
+                                <p>Bachillerato con formación tecnológica</p>
+                                <h3>NOTA GLOBAL DE 9</h3>
+                            </div>
+                            <div class="education-item">
+                                <div class="icon-label">
+                                    <img src="images/icons/university.png" width="30" alt="universidad">
+                                    <span>Universitaria</span>
+                                </div>
+                                <h4>Universidad Politécnica de Madrid</h4>
+                                <p>Grado en Ingeniería Informática</p>
+                                <h3>2022-PRESENTE</h3>
+                            </div>
+                            <div class="education-item">
+                                <div class="icon-label">
+                                    <img src="images/icons/globe.png" width="30" alt="idiomas">
+                                    <span>Idiomas</span>
+                                </div>
+                                <h4>Español</h4>
+                                <p>Nivel nativo</p>
+                                <br>
+                                <h4>Inglés</h4>
+                                <p>Nivel alto hablado y escrito </p>
+                                <h3>CERTIFICACIÓN B2</h3>
+                            </div>
+                            <div class="education-item">
+                                <div class="icon-label">
+                                    <img src="images/icons/diploma.png" width="30" alt="certificaciones">
+                                    <span>Cerificaciones</span>
+                                </div>
+                                <h4>Cisco Systems CCNA [UPM]</h4>
+                                <p>"Build your networking skills and get ready for CCNA certification and associate-level jobs"</p>                        
+                                <ul class="simple-list">
+                                    <li>
+                                        <a href="https://www.credly.com/badges/7252cb21-be13-45e1-aeef-7b1b697d4e57/public_url" target="_blank" rel="noopener noreferrer">
+                                        CCNA: Introduction to Networks
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.credly.com/badges/99880698-2c86-4d20-acb4-03dbe1d65103/public_url" target="_blank" rel="noopener noreferrer">
+                                        CCNA: Switching, Routing, and Wireless Essentials
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.credly.com/badges/91d3fcde-5f5f-4ade-ba0b-6a2bad014bc1/public_url" target="_blank" rel="noopener noreferrer">
+                                        CCNA: Enterprise Networking, Security, and Automation
+                                        </a>
+                                    </li>
+                                </ul>
+                                <h3>210 HORAS | 2025</h3>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <h2 id="experiencia" class="education-title">Experiencia</h2>
+                            
+                            <div class="experience-card">
+                                <div class="card-main">
+                                    <div class="year-box">
+                                    <span>2026</span>
+                                    </div>
+                                    <div class="card-content">
+                                    <h3 class="card-title">Desarrollador de software Junior</h3>
+                                    <p class="card-company">Teldat SAU</p>
+                                    <p class="card-description">
+                                        Desarrollo y mantenimiento de una plataforma web de gestión y monitorización de redes y equipos. Implementación de interfaces y gestión de errores.
+                                    </p>
+                                    </div>
+                                </div>
+                                <div class="card-tags">
+                                    <span class="tag active">NodeJS</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">Git</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">UI/UX</span>
+                                    <span class="tag">Java</span>
+                                    <span class="tag">SpringBoot</span>
+
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="split-right">
+                        <div class="sticky-card">
+                            <h1>¡Contacta conmigo!</h1>
+                            <br>
+                            <p>Pongámonos en contacto hoy mismo</p>
+                            <a href="mailto:sergiofergar13@gmail.com">
+                            <img src="images/icons/email.png" alt="Mail to"></img>
+                            </a>
+                            <a href="https://linkedin.com/in/sergio-fernández-927427359">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn"></img>
+                            </a>
+                            <a href="https://github.com/Sergioffgg">
+                            <img src="images/icons/github.png" alt="GitHub"></img>
+                            </a>
+                            <br>
+                            <br>
+                            <button class="simple-button">Ver más ></button>
+                        </div>
                     </div>
                 </div>
 
-            </div>
+            </section>
 
-            <!-- JS de SwiperJS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <section class="projects-wrapper">
+                <div class="projects-sticky">
+                    <h2 id="proyectos" class="projects-title">Proyectos</h2>
 
-        <script>
-        const swiper = new Swiper('.marquee-swiper', {
-            loop: true,
-            loopedSlides: 10,
-            slidesPerView: 'auto',
-            spaceBetween: 12,
-            speed: 5000,
-            autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true
-            }
-        });
-        </script>
+                    <div class="projects-carousel">
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                        <img src="images/proyecto1.jpg" alt="Nombre del Proyecto 1">
+                        </div>
+                        <div class="project-content">
+                        <h3 class="project-subtitle">Plataforma E-Commerce</h3>
+                        <p class="project-description">
+                            Diseño y desarrollo completo de una tienda online minimalista enfocada en la conversión y optimización de carga.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JS</span>
+                        </div>
+                        <a href="proyecto-1.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        </div>
+                    </article>
 
-        </header>
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                        <img src="images/proyecto2.jpg" alt="Nombre del Proyecto 2">
+                        </div>
+                        <div class="project-content">
+                        <h3 class="project-subtitle">App de Monitorización</h3>
+                        <p class="project-description">
+                            Dashboard interactivo para visualizar métricas en tiempo real de servidores y redes empresariales.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <a href="proyecto-2.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        </div>
+                    </article>
 
-    <section id="educacion" class="education-section">
-        <div class="split-container">
-            <div class="split-left">
-                <div class="education-header">
-                    <h2 class="education-title">Formación</h2>
-                    <span class="education-subtitle">subtitulo to chulo</span>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                        <img src="images/proyecto3.jpg" alt="Nombre del Proyecto 3">
+                        </div>
+                        <div class="project-content">
+                        <h3 class="project-subtitle">Portfolio Interactivo</h3>
+                        <p class="project-description">
+                            Maquetación web avanzada utilizando CSS Grid, Flexbox y técnicas de posicionamiento sticky.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Design</span>
+                        </div>
+                        <a href="proyecto-3.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        </div>
+                    </article>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="split-right">
-                <div class="sticky-card">
-                    <h1>¡Contacta conmigo!</h1>
-                    <br>
-                    <p>Pongámonos en contacto hoy mismo</p>
-                    <a href="mailto:sergiofergar13@gmail.com">
-                    <img src="images/icons/email.png" alt="Mail to"></img>
-                    </a>
-                    <a href="https://linkedin.com/in/sergio-fernández-927427359">
-                    <img src="images/icons/linkedin.png" alt="LinkedIn"></img>
-                    </a>
-                    <a href="https://github.com/Sergioffgg">
-                    <img src="images/icons/github.png" alt="GitHub"></img>
-                    </a>
-                    <br>
-                    <br>
-                    <button class="simple-button">Ver más ></button>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-    </main>
-
-</body>
+        </main>
+        <script src="script.js"></script>
+    </body>
 </html>
