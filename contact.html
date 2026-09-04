@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sergio Fernández | Contacto</title>
+
+        <link href="https://api.fontshare.com/v2/css?f[]=poppins@500&f[]=montserrat@400&f[]=switzer@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <aside class="sidebar">
+            <div class="profile-container">
+            <a href="#">
+                <img src="images/profile.jpg" class="profile-picture" alt="Perfil">
+            </a>
+            </div>
+
+            <nav class="nav-menu">
+            <a href="index.html#" class="nav-item">Sobre mí</a>
+            <a href="index.html#formacion" class="nav-item">Formación</a>
+            <a href="index.html#experiencia" class="nav-item">Experiencia</a>
+            <a href="index.html#proyectos" class="nav-item">Proyectos</a>
+            <a href="#" class="nav-item-contact active">Contacto</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+            <hr class="sidebar-divider">
+            <button id="lang-toggle" class="lang-btn" data-lang="es">EN</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <img src="images/map.png" alt="Fondo Mapa" class="hero-img-contact">
+
+            <section id="contacto" class="contact-section">
+            <div class="contact-card">
+                <h2 class="contact-title">¡Hablemos!</h2>
+                <p class="contact-subtitle">¿Tienes un proyecto en mente o quieres charlar? Envíame un mensaje.</p>
+
+                <div class="contact-actions">
+                <div class="copy-email-box">
+                    <span id="email-text" class="email-address">sergiofergar13@gmail.com</span>
+                    <button id="copy-btn" class="copy-btn" onclick="copyContent()">
+                    <span id="copy-label">Copiar</span>
+                    </button>
+                </div>
+
+                <script>
+                    let text = "sergiofergar13@gmail.com"
+                    const copyContent = async () => {
+                        await navigator.clipboard.writeText(text);
+                        showToast("¡Copiado!");
+                    }
+                </script>
+
+                <div class="social-links">
+                    <a href="https://github.com/Sergioffgg" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/sergio-fernández-927427359" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    <span>LinkedIn</span>
+                    </a>
+                </div>
+                </div>
+
+                <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Tu Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <button type="submit" class="simple-button submit-btn">Enviar mensaje ></button>
+                </form>
+            </div>
+            </section>
+
+        </main>
+
+        <script src="script.js"></script>
+        <div id="custom-toast" class="toast-container">
+            <svg class="toast-border-svg" viewBox="0 0 320 60" preserveAspectRatio="none">
+                <rect class="toast-border-rect" x="1.5" y="1.5" width="317" height="57" rx="8" />
+            </svg>
+            <span id="toast-text" class="toast-message"></span>
+        </div>
+    </body>
+</html>
+

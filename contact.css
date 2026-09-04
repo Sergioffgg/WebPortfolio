@@ -1,0 +1,332 @@
+
+/*
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Mensajes
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+*/
+
+/* Toast / Notificación Superior Alargada */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  /* Totalmente fuera de la pantalla por defecto */
+  transform: translate(-50%, -200%);
+  
+  width: 320px;        /* Formato horizontal alargado */
+  height: 60px;
+  background-color: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(8px);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 9999;
+  border-radius: 8px;
+  
+  /* Transición suave al bajar y subir */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none; /* Evita que bloquee clics mientras está oculto */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Estado visible */
+.toast-container.show {
+  transform: translate(-50%, 0); /* Baja a su posición final */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* SVG del borde animado */
+.toast-border-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.toast-border-rect {
+  fill: none;
+  stroke: #be350c; /* Color naranja */
+  stroke-width: 2.5;
+  /* Perímetro del rectángulo: (320 + 60) * 2 = 760 aprox. */
+  stroke-dasharray: 760;
+  stroke-dashoffset: 0;
+}
+
+/* Animación del borde que se consume */
+.toast-container.show .toast-border-rect {
+  animation: consumeBorder 2.5s linear forwards;
+}
+
+@keyframes consumeBorder {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 760; /* La línea desaparece por completo */
+  }
+}
+
+/* Texto interno */
+.toast-message {
+  color: #ffffff;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+CABECERA
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+*/
+
+.hero-img-contact {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.5);
+  -webkit-mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 30%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 1) 30%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+
+
+/* Layout Global */
+body {
+  display: flex;
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Sidebar Fijo */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0a0a0a;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-img-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+
+  opacity: 0.4;
+  -webkit-mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 0.8) 70%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 1) 0%, 
+    rgba(0, 0, 0, 0.8) 70%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Sección de Contacto superpuesta */
+.contact-section {
+  position: relative;
+  z-index: 1; /* Por encima de la imagen map.png */
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* Deja un 15% de margen lateral a cada lado dentro del área visible */
+  padding: 4rem 15%; 
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  background-color: rgba(13, 13, 13, 0.9); /* Fondo semi-oscuro para resaltar sobre la imagen */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2.5rem;
+  backdrop-filter: blur(8px); /* Efecto cristalino/glassmorphism */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.contact-title {
+  color: #ffffff;
+  font-family: var(--font-title, sans-serif);
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.contact-subtitle {
+  color: #a0a0a0;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  margin: 0 0 2rem 0;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.copy-email-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+}
+
+.email-address {
+  color: #ffffff;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+}
+
+.copy-btn {
+  background-color: #be350c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copy-btn.copied {
+  background-color: #2e7d32;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: #be350c;
+  background-color: rgba(190, 53, 12, 0.15);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #be350c;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  background-color: #be350c;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #a02d0a;
+}
+
+/* Adaptación responsive para pantallas más estrechas o móviles */
+@media (max-width: 992px) {
+  .contact-section {
+    padding: 3rem 8%; /* En tablets aprovecha mejor el espacio */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .contact-section {
+    padding: 2rem 5%;
+  }
+}

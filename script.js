@@ -51,3 +51,27 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
+let toastTimeout;
+
+function showToast(message, duration = 2500) {
+  const toast = document.getElementById('custom-toast');
+  const toastText = document.getElementById('toast-text');
+  const borderRect = toast.querySelector('.toast-border-rect');
+
+  if (!toast || !toastText) return;
+
+  clearTimeout(toastTimeout);
+  toast.classList.remove('show');
+  
+  borderRect.style.animation = 'none';
+  borderRect.offsetHeight;
+  borderRect.style.animation = '';
+
+  toastText.textContent = message;
+  toast.classList.add('show');
+
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
+}
