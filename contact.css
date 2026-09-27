@@ -5,15 +5,12 @@ Mensajes
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 */
 
-/* Toast / Notificación Superior Alargada */
 .toast-container {
   position: fixed;
   top: 20px;
   left: 50%;
-  /* Totalmente fuera de la pantalla por defecto */
   transform: translate(-50%, -200%);
-  
-  width: 320px;        /* Formato horizontal alargado */
+  width: 320px;
   height: 60px;
   background-color: rgba(13, 13, 13, 0.95);
   backdrop-filter: blur(8px);
@@ -24,23 +21,19 @@ Mensajes
   padding: 0 16px;
   box-sizing: border-box;
   z-index: 9999;
-  border-radius: 8px;
-  
-  /* Transición suave al bajar y subir */
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), opacity 0.3s ease;
   opacity: 0;
-  pointer-events: none; /* Evita que bloquee clics mientras está oculto */
+  pointer-events: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 
-/* Estado visible */
 .toast-container.show {
-  transform: translate(-50%, 0); /* Baja a su posición final */
+  transform: translate(-50%, 0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* SVG del borde animado */
 .toast-border-svg {
   position: absolute;
   top: 0;
@@ -52,14 +45,12 @@ Mensajes
 
 .toast-border-rect {
   fill: none;
-  stroke: #be350c; /* Color naranja */
+  stroke: #be350c;
   stroke-width: 2.5;
-  /* Perímetro del rectángulo: (320 + 60) * 2 = 760 aprox. */
   stroke-dasharray: 760;
   stroke-dashoffset: 0;
 }
 
-/* Animación del borde que se consume */
 .toast-container.show .toast-border-rect {
   animation: consumeBorder 2.5s linear forwards;
 }
@@ -69,11 +60,10 @@ Mensajes
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 760; /* La línea desaparece por completo */
+    stroke-dashoffset: 760;
   }
 }
 
-/* Texto interno */
 .toast-message {
   color: #ffffff;
   font-family: var(--font-body, sans-serif);
@@ -114,7 +104,6 @@ CABECERA
 
 
 
-/* Layout Global */
 body {
   display: flex;
   margin: 0;
@@ -123,7 +112,6 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar Fijo */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -173,14 +161,12 @@ body {
   );
 }
 
-/* Sección de Contacto superpuesta */
 .contact-section {
   position: relative;
-  z-index: 1; /* Por encima de la imagen map.png */
+  z-index: 1;
   width: 100%;
   box-sizing: border-box;
   
-  /* Deja un 15% de margen lateral a cada lado dentro del área visible */
   padding: 4rem 15%; 
   display: flex;
   justify-content: center;
@@ -188,11 +174,10 @@ body {
 
 .contact-card {
   width: 100%;
-  background-color: rgba(13, 13, 13, 0.9); /* Fondo semi-oscuro para resaltar sobre la imagen */
+  background-color: rgba(13, 13, 13, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
   padding: 2.5rem;
-  backdrop-filter: blur(8px); /* Efecto cristalino/glassmorphism */
+  backdrop-filter: blur(8px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
@@ -223,26 +208,33 @@ body {
   justify-content: space-between;
   background-color: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
+  overflow: hidden;
+  padding: 0;
 }
 
 .email-address {
   color: #ffffff;
   font-family: var(--font-body, sans-serif);
   font-size: 0.85rem;
+  padding-left: 1rem;
 }
 
 .copy-btn {
   background-color: #be350c;
   color: #ffffff;
   border: none;
-  border-radius: 4px;
-  padding: 0.35rem 0.8rem;
+  padding: 0.8rem 1.2rem;
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.copy-btn:hover {
+  background-color: #a02d0a;
 }
 
 .copy-btn.copied {
@@ -260,7 +252,6 @@ body {
   padding: 0.6rem;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
   color: #ffffff;
   text-decoration: none;
   font-size: 0.85rem;
@@ -284,7 +275,6 @@ body {
   box-sizing: border-box;
   background-color: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
   padding: 0.8rem 1rem;
   color: #ffffff;
   font-family: var(--font-body, sans-serif);
@@ -304,7 +294,6 @@ body {
   color: #ffffff;
   border: none;
   padding: 0.7rem 1.4rem;
-  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.2s ease;
@@ -314,10 +303,9 @@ body {
   background-color: #a02d0a;
 }
 
-/* Adaptación responsive para pantallas más estrechas o móviles */
 @media (max-width: 992px) {
   .contact-section {
-    padding: 3rem 8%; /* En tablets aprovecha mejor el espacio */
+    padding: 3rem 8%;
   }
 }
 
