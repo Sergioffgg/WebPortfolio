@@ -1,18 +1,3 @@
-const langBtn = document.getElementById('lang-toggle');
-
-langBtn.addEventListener('click', () => {
-  const currentLang = langBtn.getAttribute('data-lang');
-
-  if (currentLang === 'es') {
-    langBtn.setAttribute('data-lang', 'en');
-    langBtn.textContent = 'ES'; // Muestra "ES" para volver a español
-    // Aquí ejecutas tu función de traducción a Inglés
-  } else {
-    langBtn.setAttribute('data-lang', 'es');
-    langBtn.textContent = 'EN'; // Muestra "EN" para cambiar a inglés
-    // Aquí ejecutas tu función de traducción a Español
-  }
-});
 
 window.addEventListener('scroll', () => {
   const profileContainer = document.querySelector('.profile-container');
@@ -41,11 +26,9 @@ window.addEventListener('scroll', () => {
     if (currentScroll >= 0 && currentScroll <= maxScrollDistance) {
       const percentage = currentScroll / maxScrollDistance;
       
-      // Ancho visible real descontando el menú lateral (250px)
       const viewportWidth = window.innerWidth - 250; 
       
-      // Distancia total que necesita desplazarse para mostrar el final
-      const totalMovement = carousel.scrollWidth - viewportWidth + 150; // +150px de margen extra
+      const totalMovement = carousel.scrollWidth - viewportWidth + 150;
       
       carousel.style.transform = `translateX(-${percentage * totalMovement}px)`;
     }
@@ -75,3 +58,46 @@ function showToast(message, duration = 2500) {
     toast.classList.remove('show');
   }, duration);
 }
+
+
+
+let currentLang = localStorage.getItem('preferredLang') || 'es';
+let translations = {};
+async function loadTranslations() {
+  try {
+    const response = await fetch('lang.json');
+    translations = await response.json();
+    applyLanguage(currentLang);
+  } catch (error) {
+    console.error('Error cargando las traducciones:', error);
+    showToast("Error");
+  }
+}
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('preferredLang', lang);
+
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
+
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.setAttribute('data-lang', lang);
+    langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  loadTranslations();
+
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      applyLanguage(newLang);
+    });
+  }
+});

@@ -1,0 +1,90 @@
+{
+  "es": {
+    "title_a": "Sobre mí",
+    "title_f": "Formación",
+    "title_ex": "Experiencia",
+    "title_p": "Proyectos",
+    "title_c": "Contacto",
+    "description": "A punto de graduarme en Ingeniería Informática, me defino como un desarrollador con perfil Full Stack y un especial gusto por el diseño. Me considero una persona alegre, activa y con ganas de seguir aprendiendo, siempre he sido organizado, responsable y crítico con mi trabajo",
+    
+    "tag_dw": "Diseño Web",
+    "tag_da": "Diseño de APIs",
+
+    "form_head_ob": "Obligatoria",
+    "form_head_un": "Universitaria",
+    "form_head_id": "Idiomas",
+    "form_head_ce": "Certificaciones",
+
+    "for_body_a": "Bachillerato con formación tecnológica",
+    "for_body_b": "NOTA GLOBAL DE 9",
+    "for_body_c": "Grado en Ingeniería Informática",
+    "for_body_d": "2022-PRESENTE",
+    "for_body_e": "Español",
+    "for_body_f": "Nivel nativo",
+    "for_body_g": "Inglés",
+    "for_body_h": "Nivel alto hablado y escrito",
+    "for_body_i": "CERTIFICACIÓN B2",
+    "for_body_j": "210 HORAS | 2025",
+
+    "ex_body_a": "Desarrollador de software Junior",
+    "ex_body_b": "Teldat SAU",
+    "ex_body_c": "Desarrollo y mantenimiento de una plataforma web de gestión y monitorización de redes y equipos. Implementación de interfaces y gestión de errores.",
+    "ex_body_d": "Beca en desarrollo cloud en el departamento de ciberseguridad",
+
+    "contact_title": "¡Hablemos!",
+    "contact_subtitle": "Pongámonos en contacto hoy mismo",
+    
+    "more_button": "Ver más >",
+    
+    "pro_body_a": "Trabajo de Fin de Grado",
+    "pro_body_b": "Plataforma Software para la Gestión Centralizada y Segura de Datos Personales en Sistemas Distribuidos",
+    "pro_body_c": "Proyecto universitario",
+    "pro_body_d": "Web completa con IA de búsqueda y optimización de rutas de metro con python",
+    "pro_body_e": "Proyecto personal",
+    "pro_body_f": "Sistema Web de almacenamiento de 'Credits' similar a CoasterCount pero con funcionalidades mejoradas"
+  },
+  "en": {
+    "title_a": "About me",
+    "title_f": "Education",
+    "title_ex": "Experience",
+    "title_p": "Projects",
+    "title_c": "Contact",
+    "description": "About to graduate in Computer Engineering, I define myself as a Full Stack developer with a strong passion for design. I consider myself a cheerful, active person eager to keep learning, always organized, responsible, and self-critical about my work.",
+
+    "tag_dw": "Web Design",
+    "tag_da": "API Design",
+
+    "form_head_ob": "Secondary Education",
+    "form_head_un": "Higher Education",
+    "form_head_id": "Languages",
+    "form_head_ce": "Certifications",
+
+    "for_body_a": "High School Diploma in Technology",
+    "for_body_b": "OVERALL GRADE: 9/10",
+    "for_body_c": "Bachelor's Degree in Computer Engineering",
+    "for_body_d": "2022-PRESENT",
+    "for_body_e": "Spanish",
+    "for_body_f": "Native",
+    "for_body_g": "English",
+    "for_body_h": "Upper-intermediate spoken and written",
+    "for_body_i": "B2 CERTIFICATION",
+    "for_body_j": "210 HOURS | 2025",
+
+    "ex_body_a": "Junior Software Developer",
+    "ex_body_b": "Teldat SAU",
+    "ex_body_c": "Development and maintenance of a web platform for network and device management and monitoring. UI implementation and error management.",
+    "ex_body_d": "Cloud Development Internship in the Cybersecurity Department",
+
+    "contact_title": "Let's talk!",
+    "contact_subtitle": "Get in touch with me today",
+
+    "more_button": "See more >",
+
+    "pro_body_a": "Bachelor's Thesis",
+    "pro_body_b": "Software Platform for Centralized and Secure Management of Personal Data in Distributed Systems",
+    "pro_body_c": "University Project",
+    "pro_body_d": "Full web application featuring AI search and Python-based metro route optimization",
+    "pro_body_e": "Personal Project",
+    "pro_body_f": "Web-based 'Credits' tracking system similar to CoasterCount with enhanced functionality"
+  }
+}
