@@ -18,7 +18,7 @@
     <aside class="sidebar">
         <div class="profile-container">
             <a href="#">
-                <img src="images/profile.jpg" class="profile-picture">
+                <img src="images/profile.png" class="profile-picture">
             </a>
         </div>
 
@@ -67,6 +67,11 @@
                             <div class="swiper-slide tag">Node.js</div>
                             <div class="swiper-slide tag">Git</div>
                             <div class="swiper-slide tag">Python</div>
+                            <div class="swiper-slide tag">IA</div>
+                            <div class="swiper-slide tag">Diseño Web</div>
+                            <div class="swiper-slide tag">DevOps</div>
+                            <div class="swiper-slide tag">Diseño de APIs</div>
+                            <div class="swiper-slide tag">Cisco Packet Tracer</div>
                             <div class="swiper-slide tag">SQL</div>
                             <div class="swiper-slide tag">Full Stack</div>
                             <div class="swiper-slide tag">UI/UX</div>
@@ -79,6 +84,11 @@
                             <div class="swiper-slide tag">Node.js</div>
                             <div class="swiper-slide tag">Git</div>
                             <div class="swiper-slide tag">Python</div>
+                            <div class="swiper-slide tag">IA</div>
+                            <div class="swiper-slide tag">Diseño Web</div>
+                            <div class="swiper-slide tag">DevOps</div>
+                            <div class="swiper-slide tag">Diseño de APIs</div>
+                            <div class="swiper-slide tag">Cisco Packet Tracer</div>
                             <div class="swiper-slide tag">SQL</div>
                             <div class="swiper-slide tag">Full Stack</div>
                             <div class="swiper-slide tag">UI/UX</div>
@@ -210,18 +220,20 @@
                             <h1>¡Contacta conmigo!</h1>
                             <br>
                             <p>Pongámonos en contacto hoy mismo</p>
-                            <a href="mailto:sergiofergar13@gmail.com">
-                            <img src="images/icons/email.png" alt="Mail to"></img>
-                            </a>
-                            <a href="https://linkedin.com/in/sergio-fernández-927427359">
-                            <img src="images/icons/linkedin.png" alt="LinkedIn"></img>
-                            </a>
-                            <a href="https://github.com/Sergioffgg">
-                            <img src="images/icons/github.png" alt="GitHub"></img>
-                            </a>
-                            <br>
-                            <br>
-                            <button class="simple-button">Ver más ></button>
+                            
+                            <div class="sticky-card-socials">
+                                <a href="mailto:sergiofergar13@gmail.com" target="_blank" rel="noopener noreferrer">
+                                <img src="images/icons/email.png" alt="Email">
+                                </a>
+                                <a href="https://linkedin.com/in/sergio-fernández-927427359" target="_blank" rel="noopener noreferrer">
+                                <img src="images/icons/linkedin.png" alt="LinkedIn">
+                                </a>
+                                <a href="https://github.com/Sergioffgg" target="_blank" rel="noopener noreferrer">
+                                <img src="images/icons/github.png" alt="GitHub">
+                                </a>
+                            </div>
+
+                            <button onclick="location.href='contact.html'" class="simple-button">Ver más ></button>
                         </div>
                     </div>
                 </div>
@@ -235,54 +247,68 @@
                     <div class="projects-carousel">
                     <article class="project-card">
                         <div class="project-img-wrapper">
-                        <img src="images/proyecto1.jpg" alt="Nombre del Proyecto 1">
+                        <img src="images/project_koffre.png" alt="Nombre del Proyecto 1">
                         </div>
                         <div class="project-content">
-                        <h3 class="project-subtitle">Plataforma E-Commerce</h3>
+                        <h3 class="project-subtitle">Koffre</h3>
+                        <p class="card-company">Trabajo de Fin de Grado</p>
                         <p class="project-description">
-                            Diseño y desarrollo completo de una tienda online minimalista enfocada en la conversión y optimización de carga.
+                            Plataforma Software para la Gestión Centralizada y Segura de Datos Personales en Sistemas Distribuidos
                         </p>
                         <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">SpringBoot</span>
+                            <span class="tag">Diseño de APIs</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <a onclick="openMessage()" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                        <img src="images/Project_Subte.png" alt="Nombre del Proyecto 2">
+                        </div>
+                        <div class="project-content">
+                        <h3 class="project-subtitle">Subte Web</h3>
+                        <p class="card-company">Proyecto universitario</p>
+                        <p class="project-description">
+                            Web completa con IA de busqueda y optimización de rutas de metro con python.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Diseño Web</span>
                             <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JS</span>
+                            <span class="tag">IA</span>
                         </div>
-                        <a href="proyecto-1.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        <a onclick="openMessage()" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
                         </div>
                     </article>
 
                     <article class="project-card">
                         <div class="project-img-wrapper">
-                        <img src="images/proyecto2.jpg" alt="Nombre del Proyecto 2">
+                        <img src="images/project_Coaster.jpg" alt="Nombre del Proyecto 3">
                         </div>
                         <div class="project-content">
-                        <h3 class="project-subtitle">App de Monitorización</h3>
+                        <h3 class="project-subtitle">Coaster Vault</h3>
+                        <p class="card-company">Proyecto personal</p>
                         <p class="project-description">
-                            Dashboard interactivo para visualizar métricas en tiempo real de servidores y redes empresariales.
+                            Sistema Web de almacenamiento de "Credits" similar a CoasterCount pero con funcionalidades mejoradas.
                         </p>
                         <div class="project-tags">
+                            <span class="tag">Full Stack</span>
+                            <span class="tag">Diseño web</span>
                             <span class="tag">UI/UX</span>
-                            <span class="tag">API</span>
                         </div>
-                        <a href="proyecto-2.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
+                        <a onclick="openMessage()" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
                         </div>
-                    </article>
 
-                    <article class="project-card">
-                        <div class="project-img-wrapper">
-                        <img src="images/proyecto3.jpg" alt="Nombre del Proyecto 3">
-                        </div>
-                        <div class="project-content">
-                        <h3 class="project-subtitle">Portfolio Interactivo</h3>
-                        <p class="project-description">
-                            Maquetación web avanzada utilizando CSS Grid, Flexbox y técnicas de posicionamiento sticky.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Frontend</span>
-                            <span class="tag">Design</span>
-                        </div>
-                        <a href="proyecto-3.html" class="simple-button project-btn" target="_blank" rel="noopener noreferrer">Ver más ></a>
-                        </div>
+                        <script>
+                            const openMessage = async () => {
+                                showToast("¡Próximamente...!");
+                            }
+                        </script>
+
                     </article>
                     </div>
                 </div>
@@ -290,5 +316,11 @@
 
         </main>
         <script src="script.js"></script>
+        <div id="custom-toast" class="toast-container">
+            <svg class="toast-border-svg" viewBox="0 0 320 60" preserveAspectRatio="none">
+                <rect class="toast-border-rect" x="1.5" y="1.5" width="317" height="57" rx="8" />
+            </svg>
+            <span id="toast-text" class="toast-message"></span>
+        </div>
     </body>
 </html>
