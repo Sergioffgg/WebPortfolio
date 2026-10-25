@@ -41,7 +41,16 @@
     "pro_body_c": "Proyecto universitario",
     "pro_body_d": "Web completa con IA de búsqueda y optimización de rutas de metro con python",
     "pro_body_e": "Proyecto personal",
-    "pro_body_f": "Sistema Web de almacenamiento de 'Credits' similar a CoasterCount pero con funcionalidades mejoradas"
+    "pro_body_f": "Sistema Web de almacenamiento de 'Credits' similar a CoasterCount pero con funcionalidades mejoradas",
+  
+    
+    "contact_sub": "¿Tienes un proyecto en mente o quieres charlar? Envíame un mensaje.",
+    "copy_btn": "Copiar",
+    "form_name": "Tu Nombre",
+    "form_email": "Tu Email",
+    "form_message": "Escribe tu mensaje aquí...",
+    "send_btn": "Enviar mensaje >"
+  
   },
   "en": {
     "title_a": "About me",
@@ -85,6 +94,14 @@
     "pro_body_c": "University Project",
     "pro_body_d": "Full web application featuring AI search and Python-based metro route optimization",
     "pro_body_e": "Personal Project",
-    "pro_body_f": "Web-based 'Credits' tracking system similar to CoasterCount with enhanced functionality"
+    "pro_body_f": "Web-based 'Credits' tracking system similar to CoasterCount with enhanced functionality",
+  
+    "contact_sub": "Have a project in mind or want to chat? Send me a message.",
+    "copy_btn": "Copy",
+    "form_name": "Your Name",
+    "form_email": "Your Email",
+    "form_message": "Write your message here...",
+    "send_btn": "Send message >"
+  
   }
 }

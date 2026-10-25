@@ -63,24 +63,35 @@ function showToast(message, duration = 2500) {
 
 let currentLang = localStorage.getItem('preferredLang') || 'es';
 let translations = {};
+
 async function loadTranslations() {
   try {
     const response = await fetch('lang.json');
+    if (!response.ok) {
+      throw new Error(`Error HTTP: ${response.status}`);
+    }
     translations = await response.json();
     applyLanguage(currentLang);
   } catch (error) {
-    console.error('Error cargando las traducciones:', error);
-    showToast("Error");
+    console.error('Error al cargar lang.json:', error);
   }
 }
+
 function applyLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('preferredLang', lang);
 
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
       element.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-ph]').forEach(element => {
+    const key = element.getAttribute('data-i18n-ph');
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      element.placeholder = translations[lang][key];
     }
   });
 
@@ -90,6 +101,7 @@ function applyLanguage(lang) {
     langBtn.textContent = lang === 'es' ? 'EN' : 'ES';
   }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   loadTranslations();
 
